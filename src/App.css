@@ -1,9 +1,45 @@
 /*Home page*/
 
+/* Home page */
 .home-container {
-  background: url(https://img.freepik.com/free-photo/individual-doing-sport-healthy-lifestyle_23-2151764292.jpg?t=st=1741091514~exp=1741095114~hmac=516944cee95b80e906051dae8e97308091acd15661a1c7a23ef94d87d9b528e5&w=1060) no-repeat center center/cover;
+  background: url(https://img.freepik.com/free-photo/individual-doing-sport-healthy-lifestyle_23-2151764292.jpg?t=st=1741091514~exp=1741095114~hmac=516944cee95b80e906051dae8e97308091acd15661a1c7a23ef94d87d9b528e5&w=1060) 
+  no-repeat center center/cover;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  color: white;
+  font-family: 'Poppins', sans-serif; /* Modern font */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Adds depth */
+}
+
+/* Styling the heading */
+.home-container h1 {
+  font-size: 3.5rem; /* Bigger and bold */
+  font-weight: 800; /* Extra bold */
+  letter-spacing: 2px; /* More spacing for a premium look */
+  text-transform: uppercase; /* Makes it stand out */
+}
+
+/* Styling the subtext */
+.home-container p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+/* Styling the button */
+.home-container .btn {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.home-container .btn:hover {
+  background-color: #ff6600; /* A vibrant fitness color */
+  color: white;
+  transform: scale(1.1);
 }
