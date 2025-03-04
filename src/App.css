@@ -1,5 +1,3 @@
-/*Home page*/
-
 /* Home page */
 .home-container {
   background: url(https://img.freepik.com/free-photo/individual-doing-sport-healthy-lifestyle_23-2151764292.jpg?t=st=1741091514~exp=1741095114~hmac=516944cee95b80e906051dae8e97308091acd15661a1c7a23ef94d87d9b528e5&w=1060) 
@@ -42,4 +40,71 @@
   background-color: #ff6600; /* A vibrant fitness color */
   color: white;
   transform: scale(1.1);
+}
+
+
+/*Navbar*/
+
+/* Navbar Styling */
+.app-navbar {
+    background: url('https://source.unsplash.com/1600x900/?gym,fitness') no-repeat center center/cover;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Add a dark overlay to improve contrast */
+.app-navbar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    z-index: -1;
+}
+
+/* Navbar Brand */
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Navbar Links */
+.nav-link {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9) !important; /* Light gray for visibility */
+    margin-right: 15px;
+    transition: color 0.3s ease-in-out;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Shadow for readability */
+}
+
+.nav-link:hover {
+    color: #ff6600 !important; /* Highlight color */
+}
+
+/* Navbar Button */
+.nav-button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.nav-button:hover {
+    background-color: #cc5500;
+    transform: scale(1.1);
 }
