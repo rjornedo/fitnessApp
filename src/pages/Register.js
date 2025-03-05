@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import { Form, Button, Container, Card } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../App.css';
 
-export default function Login() {
+export default function Register() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate(); 
-
+    const [error, setError] = useState(null);
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setError(null);
 
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/users/login`, {
+            const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/users/register`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -25,26 +25,26 @@ export default function Login() {
             const data = await response.json();
 
             if (response.ok) {
-                localStorage.setItem('token', data.token);
-                console.log('Login successful:', data);
-                navigate('/workouts'); 
+                console.log('Registration successful:', data);
+                alert('Registration successful! Please login.');
+                navigate('/login');
             } else {
-                alert(data.message); 
+                setError(data.message);
             }
         } catch (error) {
-            console.error('Error during login:', error);
-            alert('Something went wrong. Please try again.');
+            console.error('Error during registration:', error);
+            setError('Something went wrong. Please try again.');
         }
     };
 
-
     return (
-        <div className="login-container">
+        <div className="register-container">
             <Container className="d-flex justify-content-center align-items-center vh-100">
-                <Card className="p-4 shadow-lg login-card">
+                <Card className="p-4 shadow-lg register-card">
                     <Card.Body>
-                        <h2 className="text-center mb-4 fw-bold">Welcome Back!</h2>
-                        <p className="text-center text-muted">Login to continue your fitness journey</p>
+                        <h2 className="text-center mb-4 fw-bold">Create an Account</h2>
+                        <p className="text-center text-muted">Join us on your fitness journey!</p>
+                        {error && <p className="text-danger text-center">{error}</p>}
                         <Form onSubmit={handleSubmit}>
                             <Form.Group className="mb-3">
                                 <Form.Label>Email Address</Form.Label>
@@ -69,12 +69,12 @@ export default function Login() {
                             </Form.Group>
 
                             <Button variant="primary" type="submit" className="w-100">
-                                Login
+                                Register
                             </Button>
                         </Form>
 
                         <div className="text-center mt-3">
-                            <p>Don't have an account? <Link to="/register">Sign Up</Link></p>
+                            <p>Already have an account? <Link to="/login">Login</Link></p>
                         </div>
                     </Card.Body>
                 </Card>
