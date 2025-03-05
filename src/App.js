@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'; // Keep only HashRouter
 import { useState, useEffect } from 'react';
 import Container from "react-bootstrap/Container";
 import AppNavbar from './components/AppNavbar';
@@ -10,8 +10,6 @@ import Register from './pages/Register';
 import Workouts from './pages/Workouts';
 import { UserProvider } from "./context/UserContext";
 import './App.css';  
-
-
 
 function App() {
 
@@ -70,7 +68,6 @@ function App() {
                 </Container>
             </Router>
           </UserProvider>
-
         </>
     );
 }
