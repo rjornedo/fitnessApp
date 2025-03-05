@@ -12,7 +12,7 @@ const MyWorkouts = () => {
     useEffect(() => {
         const fetchWorkouts = async () => {
             try {
-                const accessToken = localStorage.getItem("access");
+                const accessToken = localStorage.getItem("token");
                 console.log("Token being sent:", accessToken); // Debugging
 
                 if (!accessToken) {

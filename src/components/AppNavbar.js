@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FaRunning, FaDumbbell, FaTrophy, FaHeartbeat } from 'react-icons/fa';
@@ -22,10 +22,11 @@ export default function AppNavbar() {
                             <Nav.Link as={Link} to="/" className="nav-link">
                                 <FaTrophy /> Home
                             </Nav.Link>
-
-                            <Nav.Link as={Link} to="/about" className="nav-link">
+                             <Nav.Link as={Link} to="/about" className="nav-link">
                             About
-                            </Nav.Link>
+                            </Nav.Link>  
+
+                           
 
                             {(user.id !== null)
                             ?
@@ -36,15 +37,18 @@ export default function AppNavbar() {
                             <Nav.Link as={Link} to="/nutrition" className="nav-link">
                                 <FaHeartbeat /> Nutrition
                             </Nav.Link>
+                             <Nav.Link as={Link} to="/about" className="nav-link">
+                            About
+                            </Nav.Link>  
                             <Button as={Link} to="/logout" className="nav-button">
                                 Logout
                             </Button>
                             </>
-                            :                     
-                          
+                            :             
                             <Button as={Link} to="/login" className="nav-button">
                                 Login
-                            </Button>                        
+                            </Button>                            
+                        
                             }                           
 
                         </Nav>
