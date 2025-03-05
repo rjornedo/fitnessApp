@@ -1,3 +1,51 @@
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* background fully covers the screen */
+.home-container, 
+.login-container, 
+.register-container, 
+.dashboard-container {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Navbar Fix */
+.app-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Prevent child elements from overflowing */
+.container, .row, .col {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+}
 /* Home page */
 .home-container {
   background: url(https://img.freepik.com/free-photo/individual-doing-sport-healthy-lifestyle_23-2151764292.jpg?t=st=1741091514~exp=1741095114~hmac=516944cee95b80e906051dae8e97308091acd15661a1c7a23ef94d87d9b528e5&w=1060) 
@@ -106,6 +154,32 @@
 .nav-button:hover {
     background-color: #cc5500;
     transform: scale(1.1);
+}
+
+/* Navbar Toggle (Hamburger) Button */
+.navbar-toggler {
+    border: 2px solid rgba(255, 255, 255, 0.8); /* White border */
+    background-color: transparent;
+    transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+
+/* Change color when Navbar is expanded */
+.navbar-toggler:focus,
+.navbar-toggler:hover,
+.navbar-collapse.show ~ .navbar-toggler {
+    background-color: rgba(255, 255, 255, 0.2); /* Light highlight */
+    border-color: #ff6600; /* Highlight border */
+}
+
+/* Change color of the icon (three horizontal lines) when expanded */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    transition: filter 0.3s ease-in-out;
+}
+
+/* Change icon color when Navbar expands */
+.navbar-collapse.show ~ .navbar-toggler .navbar-toggler-icon {
+    filter: brightness(0) invert(1); /* Turns it into black when expanded */
 }
 
 
